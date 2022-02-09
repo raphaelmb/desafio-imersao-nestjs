@@ -1,4 +1,9 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 export class Transaction {
@@ -6,5 +11,14 @@ export class Transaction {
   id: number;
 
   @Column()
-  name: string;
+  account_id: string;
+
+  @Column()
+  amount: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @CreateDateColumn()
+  updated_at: Date;
 }
